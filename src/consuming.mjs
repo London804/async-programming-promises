@@ -42,6 +42,7 @@ export function final(){
         setText(`City: ${data.city}`);
     })
     .catch(setText)
+    // waits until promise completes
     .finally(() => {
         setTimeout(() => {
             hideWaiting();
