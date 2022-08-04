@@ -37,6 +37,7 @@ export function clearIntervalChain() {
   });
 }
 
+// Promise check for success and failure
 export function xhr() {
   let request = new Promise((resolve, reject) => {
     var xhr = new XMLHttpRequest();
@@ -64,7 +65,7 @@ export function allPromises() {
   let address = axios.get("http://localhost:3000/addressTypes");
 
   Promise.all([categories, statuses, userTypes, address])
-    .then(([cat, stat, type, address]) => {
+    .then(([cat, stat, type, address]) => { // the order of the promises will always be the order in which you add them
       setText("");
       appendText(JSON.stringify(cat.data));
       appendText(JSON.stringify(stat.data));
