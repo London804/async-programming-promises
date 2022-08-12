@@ -35,6 +35,8 @@ export async function concurrent(){
   appendText(JSON.stringify(order[0]));
 }
 
+// fire functions until all are done
+// comes in as it resolves
 export async function parallel(){
   setText("");
   await Promise.all([
